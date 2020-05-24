@@ -15,6 +15,10 @@
   $week = json_encode($chart_two['semana']);
   $media_cases = json_encode($chart_two['media']);
 
+  $chart_predictive = $class->get_predictive_week();
+  $date_predictive = json_encode($chart_predictive['fecha']);
+  $cases_predictive = json_encode($chart_predictive['predictivo']);
+
   $chart_three = $class->get_activecases_to_date();
   $active_cases = json_encode($chart_three['casos_activos']);
   $diferencial_active_cases = json_encode($chart_three['diferencial']);
@@ -24,6 +28,11 @@
   
   $chart_five = $class->get_newcases_vs_recovery();
   $new_recovery = json_encode($chart_five['recuperados_nuevos']);
+
+  $chart_six = $class->get_new_molecular_fast_test_to_date();
+  $date_new_test = json_encode($chart_six['fecha']);
+  $new_molecular_test = json_encode($chart_six['nuevas_pruebas_moleculares']);
+  $new_fast_test = json_encode($chart_six['nuevas_pruebas_rapidas']);
 
 ?>
 <!doctype html>
@@ -50,9 +59,11 @@
     <div id="init" style="width:100%; height:400px;"></div>
     <div id="container" style="width:100%; height:400px;"></div>
     <div id="chart2" style="width:100%; height:400px;"></div>
+    <div id="chartPredictive" style="width:100%; height:400px;"></div>
     <div id="chart3" style="width:100%; height:400px;"></div>
     <div id="chart4" style="width:100%; height:400px;"></div>
     <div id="chart5" style="width:100%; height:400px;"></div>
+    <div id="chart6" style="width:100%; height:400px;"></div>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         var initChart = Highcharts.chart('init', {
@@ -112,6 +123,26 @@
             series: [{
                 name: 'Promedio Nuevos Casos',
                 data: <?php echo $media_cases; ?>
+            }],
+            tooltip: {
+              shared: true
+            },
+        });
+
+        var myChartPredictive = Highcharts.chart('chartPredictive', {
+            chart: {
+                type: 'line',
+                zoomType: 'x'
+            },
+            title: {
+                text: 'Estimado de Total de Casos en la Semana'
+            },
+            xAxis: {
+                categories: <?php echo $date_predictive; ?>
+            },
+            series: [{
+                name: 'Estimado de Total de Casos',
+                data: <?php echo $cases_predictive; ?>
             }],
             tooltip: {
               shared: true
@@ -181,6 +212,29 @@
             },{
                 name: 'Recuperados Nuevos',
                 data: <?php echo $new_recovery; ?>
+            }],
+            tooltip: {
+              shared: true
+            },
+        });
+
+        var myChart6 = Highcharts.chart('chart6', {
+            chart: {
+                type: 'line',
+                zoomType: 'x'
+            },
+            title: {
+                text: 'Nuevas Pruebas Moleculares y Nuevas Pruebas Rápidas'
+            },
+            xAxis: {
+                categories: <?php echo $date_new_test; ?>
+            },
+            series: [{
+                name: 'Nuevas Pruebas Moleculares',
+                data: <?php echo $new_molecular_test; ?>
+            },{
+                name: 'Nuevas Pruebas Rápidas',
+                data: <?php echo $new_fast_test; ?>
             }],
             tooltip: {
               shared: true

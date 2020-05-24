@@ -22,6 +22,9 @@ RUN apt-get -y install \
     php5-mysqlnd \
     telnet
 
+ENV TZ=America/Lima
+RUN ln -snf /usr/share/zoneinfo/$TZ /etc/localtime && echo $TZ > /etc/timezone
+
 RUN curl -sS https://getcomposer.org/installer | php -- --filename=composer --install-dir=/bin/ && composer self-update
 
 ADD container-config /tmp
