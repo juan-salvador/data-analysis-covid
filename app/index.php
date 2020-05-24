@@ -41,9 +41,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta property="og:title" content="Análisis Datos COVID en Perú">
-    <meta property="og:image" content="splash.jpg">
+    <meta property="og:image" content="http://concept-lab.xyz/splash.jpg">
     <meta property="og:description" content="Gráficos estadisticos con comparativos respecto al desarrollo del COVID en el Perú">
-    <meta property="og:url" content="http://concept-lab.xyz">
+    <meta property="og:url" content="http://concept-lab.xyz/">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167533321-1"></script>
     <script>
