@@ -21,6 +21,10 @@
 
   $chart_four = $class->get_newcases_test_to_date();
   $test_done = json_encode($chart_four['pruebas']);
+  
+  $chart_five = $class->get_newcases_vs_recovery();
+  $new_recovery = json_encode($chart_five['recuperados_nuevos']);
+
 ?>
 <!doctype html>
 <html lang="es">
@@ -48,11 +52,13 @@
     <div id="chart2" style="width:100%; height:400px;"></div>
     <div id="chart3" style="width:100%; height:400px;"></div>
     <div id="chart4" style="width:100%; height:400px;"></div>
+    <div id="chart5" style="width:100%; height:400px;"></div>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         var initChart = Highcharts.chart('init', {
             chart: {
-                type: 'line'
+                type: 'line',
+                zoomType: 'x'
             },
             title: {
                 text: 'Total de Casos'
@@ -71,7 +77,8 @@
 
         var myChart = Highcharts.chart('container', {
             chart: {
-                type: 'line'
+                type: 'line',
+                zoomType: 'x'
             },
             title: {
                 text: 'Nuevos Casos vs Diferencial con día anterior'
@@ -93,7 +100,8 @@
 
         var myChart2 = Highcharts.chart('chart2', {
             chart: {
-                type: 'line'
+                type: 'line',
+                zoomType: 'x'
             },
             title: {
                 text: 'Promedio de Nuevos Casos por Semana'
@@ -112,7 +120,8 @@
 
         var myChart3 = Highcharts.chart('chart3', {
             chart: {
-                type: 'line'
+                type: 'line',
+                zoomType: 'x'
             },
             title: {
                 text: 'Casos Activos vs Diferencial con día anterior'
@@ -134,7 +143,8 @@
 
         var myChart4 = Highcharts.chart('chart4', {
             chart: {
-                type: 'line'
+                type: 'line',
+                zoomType: 'x'
             },
             title: {
                 text: 'Casos Nuevos vs Pruebas Realizadas'
@@ -148,6 +158,29 @@
             },{
                 name: 'Pruebas Realizadas',
                 data: <?php echo $test_done; ?>
+            }],
+            tooltip: {
+              shared: true
+            },
+        });
+
+        var myChart5 = Highcharts.chart('chart5', {
+            chart: {
+                type: 'line',
+                zoomType: 'x'
+            },
+            title: {
+                text: 'Casos Nuevos vs Recuperados Nuevos'
+            },
+            xAxis: {
+                categories: <?php echo $date; ?>
+            },
+            series: [{
+                name: 'Casos Nuevos',
+                data: <?php echo $new_cases; ?>
+            },{
+                name: 'Recuperados Nuevos',
+                data: <?php echo $new_recovery; ?>
             }],
             tooltip: {
               shared: true

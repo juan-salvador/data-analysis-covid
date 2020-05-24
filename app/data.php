@@ -34,6 +34,19 @@ class Data{
         return $new_cases;
     }
 
+    public function get_newcases_vs_recovery(){
+        $new_cases = ['fecha'=>[], 'casos_nuevos'=>[], 'recuperados_nuevos'=>[]];
+        $count = count($this->data);
+
+        for($i=0; $i<$count; $i++){
+            if($i==0 || $this->data[$i][2] =='lunes'){ continue;}
+            array_push($new_cases['fecha'], $this->data[$i][3]);
+            array_push($new_cases['casos_nuevos'], (int)$this->data[$i][6]);
+            array_push($new_cases['recuperados_nuevos'], (int)$this->data[$i][9]);
+        }
+        return $new_cases;
+    }
+
     public function get_activecases_to_date(){
         $active_cases = ['fecha'=>[], 'casos_activos'=>[], 'diferencial'=>[]];
         $count = count($this->data);
