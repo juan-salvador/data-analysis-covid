@@ -2,6 +2,10 @@
   require_once('data.php');
   $class = new Data();
 
+  $chart_init = $class->get_total_cases();
+  $all_week = json_encode($chart_init['fecha']);
+  $all_cases = json_encode($chart_init['total_casos']);
+
   $chart_one = $class->get_newcases_to_date();
   $date = json_encode($chart_one['fecha']);
   $new_cases = json_encode($chart_one['casos_nuevos']);
@@ -26,16 +30,37 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script type="text/javascript" src="/js/themes/gray.js"></script>
-    <title>Hello, world!</title>
+    <title>Análisis Datos COVID</title>
   </head>
   <body>
     <h1>Análisis COVID 19</h1>
+    <h8>(*)Gráficos comparativos no incluyen días Lunes por ser días que menos pruebas se realizan</h4>
+    <div id="init" style="width:100%; height:400px;"></div>
     <div id="container" style="width:100%; height:400px;"></div>
     <div id="chart2" style="width:100%; height:400px;"></div>
     <div id="chart3" style="width:100%; height:400px;"></div>
     <div id="chart4" style="width:100%; height:400px;"></div>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
+        var initChart = Highcharts.chart('init', {
+            chart: {
+                type: 'line'
+            },
+            title: {
+                text: 'Total de Casos'
+            },
+            xAxis: {
+                categories: <?php echo $all_week; ?>
+            },
+            series: [{
+                name: 'Nuevos Casos',
+                data: <?php echo $all_cases; ?>
+            }],
+            tooltip: {
+              shared: true
+            },
+        });
+
         var myChart = Highcharts.chart('container', {
             chart: {
                 type: 'line'

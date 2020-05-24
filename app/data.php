@@ -9,6 +9,18 @@ class Data{
         $this->data = $class->load_data();
     }
 
+    public function get_total_cases(){
+        $total = ['fecha'=>[], 'total_casos'=>[]];
+        $count = count($this->data);
+
+        for($i=0; $i<$count; $i++){
+            if($i==0){ continue;}
+            array_push($total['fecha'], $this->data[$i][3]);
+            array_push($total['total_casos'], (int)$this->data[$i][8]);
+        }
+        return $total;
+    }
+
     public function get_newcases_to_date(){
         $new_cases = ['fecha'=>[], 'casos_nuevos'=>[], 'diferencial'=>[]];
         $count = count($this->data);
