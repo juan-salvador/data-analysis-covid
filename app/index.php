@@ -40,6 +40,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta property="og:title" content="Análisis Datos COVID en Perú">
+    <meta property="og:image" content="splash.jpg">
+    <meta property="og:description" content="Gráficos estadisticos con comparativos respecto al desarrollo del COVID en el Perú">
+    <meta property="og:url" content="http://concept-lab.xyz">
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167533321-1"></script>
     <script>
@@ -51,7 +55,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="https://code.highcharts.com/highcharts.js"></script>
     <script type="text/javascript" src="/js/themes/gray.js"></script>
-    <title>Análisis Datos COVID</title>
+    <title>Análisis Datos COVID en Perú</title>
   </head>
   <body>
     <h1>Análisis COVID 19</h1>
