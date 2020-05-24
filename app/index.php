@@ -100,7 +100,7 @@
                 categories: <?php echo $all_week; ?>
             },
             series: [{
-                name: 'Nuevos Casos',
+                name: 'Total Casos',
                 data: <?php echo $all_cases; ?>
             }],
             tooltip: {
@@ -292,7 +292,7 @@
                 zoomType: 'x'
             },
             title: {
-                text: 'Nuevas Pruebas Moleculares y Nuevas Positivas Pruebas Moleculares'
+                text: 'Nuevas Pruebas Moleculares y Nuevas Pruebas Moleculares Positivas'
             },
             xAxis: {
                 categories: <?php echo $date_new_test_molecular; ?>
@@ -315,7 +315,7 @@
                 zoomType: 'x'
             },
             title: {
-                text: 'Nuevas Pruebas Rápidas y Nuevas Positivas Pruebas Rápidas'
+                text: 'Nuevas Pruebas Rápidas y Nuevas Pruebas Rápidas Positivas'
             },
             xAxis: {
                 categories: <?php echo $date_new_test_fast; ?>
