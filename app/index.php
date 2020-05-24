@@ -86,6 +86,11 @@
     <div id="chart6" style="width:100%; height:400px;"></div>
     <div id="chart7" style="width:100%; height:400px;"></div>
     <div id="chart8" style="width:100%; height:400px;"></div>
+    <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+        <div class="container text-center">
+        <small>Copyright &copy; Juan Carlos Salvador Garcia</small>
+        </div>
+    </footer>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         var initChart = Highcharts.chart('init', {
