@@ -29,10 +29,25 @@
   $chart_five = $class->get_newcases_vs_recovery();
   $new_recovery = json_encode($chart_five['recuperados_nuevos']);
 
+  $chart_test = $class->get_new_test_to_total_test();
+  $date_general_test = json_encode($chart_test['fecha']);
+  $new_general_test = json_encode($chart_test['nuevas_pruebas']);
+  $all_test = json_encode($chart_test['total_pruebas']);
+
   $chart_six = $class->get_new_molecular_fast_test_to_date();
   $date_new_test = json_encode($chart_six['fecha']);
   $new_molecular_test = json_encode($chart_six['nuevas_pruebas_moleculares']);
   $new_fast_test = json_encode($chart_six['nuevas_pruebas_rapidas']);
+
+  $chart_seven = $class->get_new_molecular_test_and_positive_molecular();
+  $date_new_test_molecular = json_encode($chart_seven['fecha']);
+  $all_new_molecular_test = json_encode($chart_seven['nuevas_pruebas_moleculares']);
+  $all_new_positive_molecular = json_encode($chart_seven['nuevas_positivos_molecular']);
+
+  $chart_eight = $class->get_new_fast_test_and_positive_fast();
+  $date_new_test_fast = json_encode($chart_eight['fecha']);
+  $all_new_fast_test = json_encode($chart_eight['nuevas_pruebas_rápidas']);
+  $all_new_positive_fast = json_encode($chart_eight['nuevas_positivos_rápidas']);
 
 ?>
 <!doctype html>
@@ -67,7 +82,10 @@
     <div id="chart3" style="width:100%; height:400px;"></div>
     <div id="chart4" style="width:100%; height:400px;"></div>
     <div id="chart5" style="width:100%; height:400px;"></div>
+    <div id="chartTest" style="width:100%; height:400px;"></div>
     <div id="chart6" style="width:100%; height:400px;"></div>
+    <div id="chart7" style="width:100%; height:400px;"></div>
+    <div id="chart8" style="width:100%; height:400px;"></div>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
         var initChart = Highcharts.chart('init', {
@@ -222,6 +240,29 @@
             },
         });
 
+        var myChartTest = Highcharts.chart('chartTest', {
+            chart: {
+                type: 'line',
+                zoomType: 'x'
+            },
+            title: {
+                text: 'Total de Pruebas y Nuevas Pruebas Realizadas'
+            },
+            xAxis: {
+                categories: <?php echo $date_general_test; ?>
+            },
+            series: [{
+                name: 'Nuevas Pruebas Realizadas',
+                data: <?php echo $new_general_test; ?>
+            },{
+                name: 'Total de Pruebas Realizadas',
+                data: <?php echo $all_test; ?>
+            }],
+            tooltip: {
+              shared: true
+            },
+        });
+
         var myChart6 = Highcharts.chart('chart6', {
             chart: {
                 type: 'line',
@@ -239,6 +280,52 @@
             },{
                 name: 'Nuevas Pruebas Rápidas',
                 data: <?php echo $new_fast_test; ?>
+            }],
+            tooltip: {
+              shared: true
+            },
+        });
+
+        var myChart7 = Highcharts.chart('chart7', {
+            chart: {
+                type: 'line',
+                zoomType: 'x'
+            },
+            title: {
+                text: 'Nuevas Pruebas Moleculares y Nuevas Positivas Pruebas Moleculares'
+            },
+            xAxis: {
+                categories: <?php echo $date_new_test_molecular; ?>
+            },
+            series: [{
+                name: 'Nuevas Pruebas Moleculares',
+                data: <?php echo $all_new_molecular_test; ?>
+            },{
+                name: 'Resultados Positivos',
+                data: <?php echo $all_new_positive_molecular; ?>
+            }],
+            tooltip: {
+              shared: true
+            },
+        });
+
+        var myChart8 = Highcharts.chart('chart8', {
+            chart: {
+                type: 'line',
+                zoomType: 'x'
+            },
+            title: {
+                text: 'Nuevas Pruebas Rápidas y Nuevas Positivas Pruebas Rápidas'
+            },
+            xAxis: {
+                categories: <?php echo $date_new_test_fast; ?>
+            },
+            series: [{
+                name: 'Nuevas Pruebas Rápidas',
+                data: <?php echo $all_new_fast_test; ?>
+            },{
+                name: 'Resultados Positivos',
+                data: <?php echo $all_new_positive_fast; ?>
             }],
             tooltip: {
               shared: true

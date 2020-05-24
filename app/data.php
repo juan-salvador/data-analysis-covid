@@ -108,6 +108,19 @@ class Data{
         return $new_cases;
     }
 
+    public function get_new_test_to_total_test(){
+        $active_cases = ['fecha'=>[], 'nuevas_pruebas'=>[], 'total_pruebas'=>[]];
+        $count = count($this->data);
+
+        for($i=0; $i<$count; $i++){
+            if($i==0){ continue;}
+            array_push($active_cases['fecha'], $this->data[$i][3]);
+            array_push($active_cases['nuevas_pruebas'], (int)$this->data[$i][25]);
+            array_push($active_cases['total_pruebas'], (int)$this->data[$i][27]);
+        }
+        return $active_cases;
+    }
+
     public function get_new_molecular_fast_test_to_date(){
         $active_cases = ['fecha'=>[], 'nuevas_pruebas_moleculares'=>[], 'nuevas_pruebas_rapidas'=>[]];
         $count = count($this->data);
@@ -117,6 +130,32 @@ class Data{
             array_push($active_cases['fecha'], $this->data[$i][3]);
             array_push($active_cases['nuevas_pruebas_moleculares'], (int)$this->data[$i][15]);
             array_push($active_cases['nuevas_pruebas_rapidas'], (int)$this->data[$i][20]);
+        }
+        return $active_cases;
+    }
+
+    public function get_new_molecular_test_and_positive_molecular(){
+        $active_cases = ['fecha'=>[], 'nuevas_pruebas_moleculares'=>[], 'nuevas_positivos_molecular'=>[]];
+        $count = count($this->data);
+
+        for($i=0; $i<$count; $i++){
+            if($i==0){ continue;}
+            array_push($active_cases['fecha'], $this->data[$i][3]);
+            array_push($active_cases['nuevas_pruebas_moleculares'], (int)$this->data[$i][15]);
+            array_push($active_cases['nuevas_positivos_molecular'], (int)$this->data[$i][18]);
+        }
+        return $active_cases;
+    }
+
+    public function get_new_fast_test_and_positive_fast(){
+        $active_cases = ['fecha'=>[], 'nuevas_pruebas_rápidas'=>[], 'nuevas_positivos_rápidas'=>[]];
+        $count = count($this->data);
+
+        for($i=0; $i<$count; $i++){
+            if($i==0 || $this->data[$i][3]<'2020-04-08'){ continue;}
+            array_push($active_cases['fecha'], $this->data[$i][3]);
+            array_push($active_cases['nuevas_pruebas_rápidas'], (int)$this->data[$i][20]);
+            array_push($active_cases['nuevas_positivos_rápidas'], (int)$this->data[$i][23]);
         }
         return $active_cases;
     }
