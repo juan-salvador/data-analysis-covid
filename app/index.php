@@ -55,10 +55,31 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Primary Meta Tags -->
+    <title>Análisis Datos COVID en Perú</title>
+    <meta name="title" content="Análisis Datos COVID en Perú">
+    <meta name="description" content="Gráficos estadisticos con comparativos respecto al desarrollo del COVID en el Perú">
+    <meta name="keywords" content="covid19, peru, covid en peru, covid peru"/>
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://covidenperu.com/">
     <meta property="og:title" content="Análisis Datos COVID en Perú">
-    <meta property="og:image" content="http://concept-lab.xyz/splash.jpg">
     <meta property="og:description" content="Gráficos estadisticos con comparativos respecto al desarrollo del COVID en el Perú">
-    <meta property="og:url" content="http://concept-lab.xyz/">
+    <meta property="og:image" content="http://covidenperu.com/splash.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="http://covidenperu.com/">
+    <meta property="twitter:title" content="Análisis Datos COVID en Perú">
+    <meta property="twitter:description" content="Gráficos estadisticos con comparativos respecto al desarrollo del COVID en el Perú">
+    <meta property="twitter:image" content="http://covidenperu.com/splash.jpg">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-167533321-1"></script>
     <script>
