@@ -72,9 +72,9 @@
     <script type="text/javascript" src="/js/themes/gray.js"></script>
     <title>Análisis Datos COVID en Perú</title>
   </head>
-  <body>
+  <body style="background-color: #343a4e;">
     <div class="container">
-        <h1 class="text-center font-weight-bold">Análisis COVID 19</h1>
+        <h1 class="text-center font-weight-bold" style="color: white;">Análisis COVID 19</h1>
         <div class="alert alert-primary" role="alert">
             (*)Gráficos comparativos no incluyen días Lunes por ser días que menos pruebas se realizan
         </div>
