@@ -47,7 +47,7 @@ class Data{
         $count = count($this->data);
 
         for($i=0; $i<$count; $i++){
-            if($i==0 || $this->data[$i][2] =='lunes'){ continue;}
+            if($i==0){ continue;}
             array_push($new_cases['fecha'], $this->data[$i][3]);
             array_push($new_cases['casos_nuevos'], (int)$this->data[$i][6]);
             array_push($new_cases['recuperados_nuevos'], (int)$this->data[$i][9]);
@@ -60,7 +60,7 @@ class Data{
         $count = count($this->data);
 
         for($i=0; $i<$count; $i++){
-            if($i==0 || $this->data[$i][2] =='lunes'){ continue;}
+            if($i==0){ continue;}
             array_push($active_cases['fecha'], $this->data[$i][3]);
             array_push($active_cases['casos_activos'], (int)$this->data[$i][4]);
             array_push($active_cases['diferencial'], (int)$this->data[$i][5]);
@@ -73,7 +73,7 @@ class Data{
         $count = count($this->data);
 
         for($i=0; $i<$count; $i++){
-            if($i==0 || $this->data[$i][2] =='lunes'){ continue;}
+            if($i==0){ continue;}
             array_push($active_cases['fecha'], $this->data[$i][3]);
             array_push($active_cases['nuevos_casos'], (int)$this->data[$i][6]);
             array_push($active_cases['pruebas'], (int)$this->data[$i][25]);
@@ -126,7 +126,7 @@ class Data{
         $count = count($this->data);
 
         for($i=0; $i<$count; $i++){
-            if($i==0 || $this->data[$i][2] =='lunes'){ continue;}
+            if($i==0){ continue;}
             array_push($active_cases['fecha'], $this->data[$i][3]);
             array_push($active_cases['nuevas_pruebas_moleculares'], (int)$this->data[$i][15]);
             array_push($active_cases['nuevas_pruebas_rapidas'], (int)$this->data[$i][20]);
@@ -190,6 +190,6 @@ class Data{
 }
 /*
 $a = new Data();
-$b = $a->get_predictive_week();
+$b = $a->get_activecases_to_date();
 
 echo json_encode($b);*/

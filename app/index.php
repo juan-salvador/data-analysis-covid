@@ -20,13 +20,18 @@
   $cases_predictive = json_encode($chart_predictive['predictivo']);
 
   $chart_three = $class->get_activecases_to_date();
+  $active_dates = json_encode($chart_three['fecha']);
   $active_cases = json_encode($chart_three['casos_activos']);
   $diferencial_active_cases = json_encode($chart_three['diferencial']);
 
   $chart_four = $class->get_newcases_test_to_date();
+  $four_date = json_encode($chart_four['fecha']);
+  $four_new_cases = json_encode($chart_four['nuevos_casos']);
   $test_done = json_encode($chart_four['pruebas']);
   
   $chart_five = $class->get_newcases_vs_recovery();
+  $five_date = json_encode($chart_five['fecha']);
+  $five_new_cases = json_encode($chart_five['casos_nuevos']);
   $new_recovery = json_encode($chart_five['recuperados_nuevos']);
 
   $chart_test = $class->get_new_test_to_total_test();
@@ -114,7 +119,7 @@
         <div class="col mb-4">
             <div class="card border-info">
             <div class="card-header text-center text-white font-weight-bold bg-info mb-3">
-                Nuevos Casos vs Diferencial con día anterior
+                Nuevos Casos vs Diferencial con día anterior(*)
             </div>
             <div id="container" class="card-body" style="width:100%; height:400px;"></div>
             </div>
@@ -292,7 +297,7 @@
                 text: ''
             },
             xAxis: {
-                categories: <?php echo $date; ?>
+                categories: <?php echo $active_dates; ?>
             },
             series: [{
                 name: 'Casos Activos',
@@ -315,11 +320,11 @@
                 text: ''
             },
             xAxis: {
-                categories: <?php echo $date; ?>
+                categories: <?php echo $four_date; ?>
             },
             series: [{
                 name: 'Casos Nuevos',
-                data: <?php echo $new_cases; ?>
+                data: <?php echo $four_new_cases; ?>
             },{
                 name: 'Pruebas Realizadas',
                 data: <?php echo $test_done; ?>
@@ -338,11 +343,11 @@
                 text: ''
             },
             xAxis: {
-                categories: <?php echo $date; ?>
+                categories: <?php echo $five_date; ?>
             },
             series: [{
                 name: 'Casos Nuevos',
-                data: <?php echo $new_cases; ?>
+                data: <?php echo $five_new_cases; ?>
             },{
                 name: 'Recuperados Nuevos',
                 data: <?php echo $new_recovery; ?>
