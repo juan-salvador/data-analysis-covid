@@ -73,19 +73,104 @@
     <title>Análisis Datos COVID en Perú</title>
   </head>
   <body>
-    <h1>Análisis COVID 19</h1>
-    <h8>(*)Gráficos comparativos no incluyen días Lunes por ser días que menos pruebas se realizan</h4>
-    <div id="init" style="width:100%; height:400px;"></div>
-    <div id="container" style="width:100%; height:400px;"></div>
-    <div id="chart2" style="width:100%; height:400px;"></div>
-    <div id="chartPredictive" style="width:100%; height:400px;"></div>
-    <div id="chart3" style="width:100%; height:400px;"></div>
-    <div id="chart4" style="width:100%; height:400px;"></div>
-    <div id="chart5" style="width:100%; height:400px;"></div>
-    <div id="chartTest" style="width:100%; height:400px;"></div>
-    <div id="chart6" style="width:100%; height:400px;"></div>
-    <div id="chart7" style="width:100%; height:400px;"></div>
-    <div id="chart8" style="width:100%; height:400px;"></div>
+    <div class="container">
+        <h1 class="text-center font-weight-bold">Análisis COVID 19</h1>
+        <div class="alert alert-primary" role="alert">
+            (*)Gráficos comparativos no incluyen días Lunes por ser días que menos pruebas se realizan
+        </div>
+    <!--asdasd !-->
+    <div class="row row-cols-1 row-cols-md-1">
+        <div class="col mb-4">
+            <div class="card border-info">
+            <div class="card-header text-center text-white font-weight-bold bg-info mb-3">
+                Total de Casos Reportados
+            </div>
+            <div id="init" class="card-body" style="width:100%; height:400px;">
+            </div></div>
+        </div>
+        <div class="col mb-4">
+            <div class="card border-info">
+            <div class="card-header text-center text-white font-weight-bold bg-info mb-3">
+                Nuevos Casos vs Diferencial con día anterior
+            </div>
+            <div id="container" class="card-body" style="width:100%; height:400px;"></div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card border-info">
+                <div class="card-header text-center text-white font-weight-bold bg-info mb-3">
+                    Promedio de Nuevos Casos por Semana
+                </div>
+                <div id="chart2" class="card-body" style="width:100%; height:400px;"></div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card border-info">
+                <div class="card-header text-center text-white font-weight-bold bg-info mb-3">
+                    Estimado de Total de Casos en la Semana
+                </div>
+                <div id="chartPredictive" class="card-body" style="width:100%; height:400px;"></div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card border-info">
+                <div class="card-header text-center text-white font-weight-bold bg-info mb-3">
+                    Casos Activos vs Diferencial con día anterior
+                </div>
+                <div id="chart3" class="card-body" style="width:100%; height:400px;"></div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card border-info">
+                <div class="card-header text-center text-white font-weight-bold bg-info mb-3">
+                    Casos Nuevos vs Pruebas Realizadas
+                </div>
+                <div id="chart4" class="card-body" style="width:100%; height:400px;"></div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card border-info">
+                <div class="card-header text-center text-white font-weight-bold bg-info mb-3">
+                    Casos Nuevos vs Recuperados Nuevos
+                </div>
+                <div id="chart5" class="card-body" style="width:100%; height:400px;"></div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card border-info">
+                <div class="card-header text-center text-white font-weight-bold bg-info mb-3">
+                    Total de Pruebas y Nuevas Pruebas Realizadas
+                </div>
+                <div id="chartTest" class="card-body" style="width:100%; height:400px;"></div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card border-info">
+                <div class="card-header text-center text-white font-weight-bold bg-info mb-3">
+                    Nuevas Pruebas Moleculares y Nuevas Pruebas Rápidas
+                </div>
+                <div id="chart6" class="card-body" style="width:100%; height:400px;"></div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card border-info">
+                <div class="card-header text-center text-white font-weight-bold bg-info mb-3">
+                    Nuevas Pruebas Moleculares y Nuevas Pruebas Moleculares Positivas
+                </div>
+                <div id="chart7" class="card-body" style="width:100%; height:400px;"></div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card border-info">
+                <div class="card-header text-center text-white font-weight-bold bg-info mb-3">
+                    Nuevas Pruebas Rápidas y Nuevas Pruebas Rápidas Positivas
+                </div>
+                <div id="chart8" class="card-body" style="width:100%; height:400px;"></div>
+            </div>
+        </div>
+    </div>
+    <!-- asdad !-->
+    </div>
     <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
         <div class="container text-center">
         <small>Copyright &copy; Juan Carlos Salvador Garcia</small>
@@ -98,8 +183,8 @@
                 type: 'line',
                 zoomType: 'x'
             },
-            title: {
-                text: 'Total de Casos'
+            title:{
+                text: null
             },
             xAxis: {
                 categories: <?php echo $all_week; ?>
@@ -119,7 +204,7 @@
                 zoomType: 'x'
             },
             title: {
-                text: 'Nuevos Casos vs Diferencial con día anterior'
+                text: ''
             },
             xAxis: {
                 categories: <?php echo $date; ?>
@@ -142,7 +227,7 @@
                 zoomType: 'x'
             },
             title: {
-                text: 'Promedio de Nuevos Casos por Semana'
+                text: ''
             },
             xAxis: {
                 categories: <?php echo $week; ?>
@@ -162,7 +247,7 @@
                 zoomType: 'x'
             },
             title: {
-                text: 'Estimado de Total de Casos en la Semana'
+                text: ''
             },
             xAxis: {
                 categories: <?php echo $date_predictive; ?>
@@ -182,7 +267,7 @@
                 zoomType: 'x'
             },
             title: {
-                text: 'Casos Activos vs Diferencial con día anterior'
+                text: ''
             },
             xAxis: {
                 categories: <?php echo $date; ?>
@@ -205,7 +290,7 @@
                 zoomType: 'x'
             },
             title: {
-                text: 'Casos Nuevos vs Pruebas Realizadas'
+                text: ''
             },
             xAxis: {
                 categories: <?php echo $date; ?>
@@ -228,7 +313,7 @@
                 zoomType: 'x'
             },
             title: {
-                text: 'Casos Nuevos vs Recuperados Nuevos'
+                text: ''
             },
             xAxis: {
                 categories: <?php echo $date; ?>
@@ -251,7 +336,7 @@
                 zoomType: 'x'
             },
             title: {
-                text: 'Total de Pruebas y Nuevas Pruebas Realizadas'
+                text: ''
             },
             xAxis: {
                 categories: <?php echo $date_general_test; ?>
@@ -274,7 +359,7 @@
                 zoomType: 'x'
             },
             title: {
-                text: 'Nuevas Pruebas Moleculares y Nuevas Pruebas Rápidas'
+                text: ''
             },
             xAxis: {
                 categories: <?php echo $date_new_test; ?>
@@ -297,7 +382,7 @@
                 zoomType: 'x'
             },
             title: {
-                text: 'Nuevas Pruebas Moleculares y Nuevas Pruebas Moleculares Positivas'
+                text: ''
             },
             xAxis: {
                 categories: <?php echo $date_new_test_molecular; ?>
@@ -320,7 +405,7 @@
                 zoomType: 'x'
             },
             title: {
-                text: 'Nuevas Pruebas Rápidas y Nuevas Pruebas Rápidas Positivas'
+                text: ''
             },
             xAxis: {
                 categories: <?php echo $date_new_test_fast; ?>
