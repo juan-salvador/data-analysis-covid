@@ -105,7 +105,7 @@
             (*)Gráficos comparativos no incluyen días Lunes por ser días que menos pruebas se realizan
         </div>
         <div class="alert alert-danger" role="alert">
-            Fuente: Minsa
+            Fuente: Minsa / Fechas: Mayo 2020
         </div>
     <div class="row row-cols-1 row-cols-md-1">
         <div class="col mb-4">

@@ -15,14 +15,14 @@ class Data{
         $total_to_day = [];
         if($to_day){
             for($i=0; $i<$count; $i++){
-                if($i==0){ continue;}
+                if($i==0 || $this->data[$i][3]<'2020-05-01'){ continue;}
                 $total_to_day[$this->data[$i][3]] = (int)$this->data[$i][8];
             }
             return $total_to_day;
         }
 
         for($i=0; $i<$count; $i++){
-            if($i==0){ continue;}
+            if($i==0 || $this->data[$i][3]<'2020-05-01'){ continue;}
             array_push($total['fecha'], $this->data[$i][3]);
             array_push($total['total_casos'], (int)$this->data[$i][8]);
         }
@@ -34,7 +34,7 @@ class Data{
         $count = count($this->data);
 
         for($i=0; $i<$count; $i++){
-            if($i==0 || $this->data[$i][2] =='lunes'){ continue;}
+            if($i==0 || $this->data[$i][2] =='lunes' || $this->data[$i][3]<'2020-05-01'){ continue;}
             array_push($new_cases['fecha'], $this->data[$i][3]);
             array_push($new_cases['casos_nuevos'], (int)$this->data[$i][6]);
             array_push($new_cases['diferencial'], (int)$this->data[$i][7]);
@@ -47,7 +47,7 @@ class Data{
         $count = count($this->data);
 
         for($i=0; $i<$count; $i++){
-            if($i==0){ continue;}
+            if($i==0 || $this->data[$i][3]<'2020-05-01'){ continue;}
             array_push($new_cases['fecha'], $this->data[$i][3]);
             array_push($new_cases['casos_nuevos'], (int)$this->data[$i][6]);
             array_push($new_cases['recuperados_nuevos'], (int)$this->data[$i][9]);
@@ -60,7 +60,7 @@ class Data{
         $count = count($this->data);
 
         for($i=0; $i<$count; $i++){
-            if($i==0){ continue;}
+            if($i==0 || $this->data[$i][3]<'2020-05-01'){ continue;}
             array_push($active_cases['fecha'], $this->data[$i][3]);
             array_push($active_cases['casos_activos'], (int)$this->data[$i][4]);
             array_push($active_cases['diferencial'], (int)$this->data[$i][5]);
@@ -73,7 +73,7 @@ class Data{
         $count = count($this->data);
 
         for($i=0; $i<$count; $i++){
-            if($i==0){ continue;}
+            if($i==0 || $this->data[$i][3]<'2020-05-01'){ continue;}
             array_push($active_cases['fecha'], $this->data[$i][3]);
             array_push($active_cases['nuevos_casos'], (int)$this->data[$i][6]);
             array_push($active_cases['pruebas'], (int)$this->data[$i][25]);
@@ -113,7 +113,7 @@ class Data{
         $count = count($this->data);
 
         for($i=0; $i<$count; $i++){
-            if($i==0){ continue;}
+            if($i==0 || $this->data[$i][3]<'2020-05-01'){ continue;}
             array_push($active_cases['fecha'], $this->data[$i][3]);
             array_push($active_cases['nuevas_pruebas'], (int)$this->data[$i][25]);
             array_push($active_cases['total_pruebas'], (int)$this->data[$i][27]);
@@ -126,7 +126,7 @@ class Data{
         $count = count($this->data);
 
         for($i=0; $i<$count; $i++){
-            if($i==0){ continue;}
+            if($i==0 || $this->data[$i][3]<'2020-05-01'){ continue;}
             array_push($active_cases['fecha'], $this->data[$i][3]);
             array_push($active_cases['nuevas_pruebas_moleculares'], (int)$this->data[$i][15]);
             array_push($active_cases['nuevas_pruebas_rapidas'], (int)$this->data[$i][20]);
@@ -139,7 +139,7 @@ class Data{
         $count = count($this->data);
 
         for($i=0; $i<$count; $i++){
-            if($i==0){ continue;}
+            if($i==0 || $this->data[$i][3]<'2020-05-01'){ continue;}
             array_push($active_cases['fecha'], $this->data[$i][3]);
             array_push($active_cases['nuevas_pruebas_moleculares'], (int)$this->data[$i][15]);
             array_push($active_cases['nuevas_positivos_molecular'], (int)$this->data[$i][18]);
@@ -152,7 +152,7 @@ class Data{
         $count = count($this->data);
 
         for($i=0; $i<$count; $i++){
-            if($i==0 || $this->data[$i][3]<'2020-04-08'){ continue;}
+            if($i==0 || $this->data[$i][3]<'2020-05-01'){ continue;}
             array_push($active_cases['fecha'], $this->data[$i][3]);
             array_push($active_cases['nuevas_pruebas_rápidas'], (int)$this->data[$i][20]);
             array_push($active_cases['nuevas_positivos_rápidas'], (int)$this->data[$i][23]);
