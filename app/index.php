@@ -111,7 +111,7 @@
         <div class="col mb-4">
             <div class="card border-info">
             <div class="card-header text-center text-white font-weight-bold bg-info mb-3">
-                Total de Casos Reportados: 164476 Casos
+                Total de Casos Reportados: 170039 Casos
             </div>
             <div id="init" class="card-body" style="width:100%; height:400px;">
             </div></div>
@@ -119,7 +119,7 @@
         <div class="col mb-4">
             <div class="card border-info">
             <div class="card-header text-center text-white font-weight-bold bg-info mb-3">
-                Nuevos Casos vs Diferencial con día anterior(*) - 8805 Nuevos Casos Reportados
+                Nuevos Casos vs Diferencial con día anterior(*) - 5563 Nuevos Casos Reportados
             </div>
             <div id="container" class="card-body" style="width:100%; height:400px;"></div>
             </div>
@@ -143,7 +143,7 @@
         <div class="col mb-4">
             <div class="card border-info">
                 <div class="card-header text-center text-white font-weight-bold bg-info mb-3">
-                    Casos Activos vs Diferencial con día anterior - 92762 Casos Activos
+                    Casos Activos vs Diferencial con día anterior - 96898 Casos Activos
                 </div>
                 <div id="chart3" class="card-body" style="width:100%; height:400px;"></div>
             </div>
@@ -151,7 +151,7 @@
         <div class="col mb-4">
             <div class="card border-info">
                 <div class="card-header text-center text-white font-weight-bold bg-info mb-3">
-                    Casos Nuevos vs Pruebas Realizadas - 46166 Nuevas Pruebas Realizadas
+                    Casos Nuevos vs Pruebas Realizadas - 17785 Nuevas Pruebas Realizadas
                 </div>
                 <div id="chart4" class="card-body" style="width:100%; height:400px;"></div>
             </div>
@@ -159,7 +159,7 @@
         <div class="col mb-4">
             <div class="card border-info">
                 <div class="card-header text-center text-white font-weight-bold bg-info mb-3">
-                    Casos Nuevos vs Recuperados Nuevos - 761 Recuperados Nuevos
+                    Casos Nuevos vs Recuperados Nuevos - 1299 Recuperados Nuevos
                 </div>
                 <div id="chart5" class="card-body" style="width:100%; height:400px;"></div>
             </div>
@@ -167,7 +167,7 @@
         <div class="col mb-4">
             <div class="card border-info">
                 <div class="card-header text-center text-white font-weight-bold bg-info mb-3">
-                    Total de Pruebas y Nuevas Pruebas Realizadas - 1058874 Total de Pruebas Realizadas
+                    Total de Pruebas y Nuevas Pruebas Realizadas - 1076659 Total de Pruebas Realizadas
                 </div>
                 <div id="chartTest" class="card-body" style="width:100%; height:400px;"></div>
             </div>
