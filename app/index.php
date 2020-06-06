@@ -105,13 +105,13 @@
             (*)Gráficos comparativos no incluyen días Lunes por ser días que menos pruebas se realizan
         </div>
         <div class="alert alert-danger" role="alert">
-            Fuente: Minsa / Fechas: Mayo 2020
+            Fuente: Minsa / Fechas: Mayo-Junio 2020
         </div>
     <div class="row row-cols-1 row-cols-md-1">
         <div class="col mb-4">
             <div class="card border-info">
             <div class="card-header text-center text-white font-weight-bold bg-info mb-3">
-                Total de Casos Reportados: 170039 Casos
+                Total de Casos Reportados: 191758 Casos
             </div>
             <div id="init" class="card-body" style="width:100%; height:400px;">
             </div></div>
@@ -119,7 +119,7 @@
         <div class="col mb-4">
             <div class="card border-info">
             <div class="card-header text-center text-white font-weight-bold bg-info mb-3">
-                Nuevos Casos vs Diferencial con día anterior(*) - 5563 Nuevos Casos Reportados
+                Nuevos Casos vs Diferencial con día anterior(*) - 4358 Nuevos Casos Reportados
             </div>
             <div id="container" class="card-body" style="width:100%; height:400px;"></div>
             </div>
@@ -143,7 +143,7 @@
         <div class="col mb-4">
             <div class="card border-info">
                 <div class="card-header text-center text-white font-weight-bold bg-info mb-3">
-                    Casos Activos vs Diferencial con día anterior - 96898 Casos Activos
+                    Casos Activos vs Diferencial con día anterior - 103726 Casos Activos
                 </div>
                 <div id="chart3" class="card-body" style="width:100%; height:400px;"></div>
             </div>
@@ -151,7 +151,7 @@
         <div class="col mb-4">
             <div class="card border-info">
                 <div class="card-header text-center text-white font-weight-bold bg-info mb-3">
-                    Casos Nuevos vs Pruebas Realizadas - 17785 Nuevas Pruebas Realizadas
+                    Casos Nuevos vs Pruebas Realizadas - 18535 Nuevas Pruebas Realizadas
                 </div>
                 <div id="chart4" class="card-body" style="width:100%; height:400px;"></div>
             </div>
@@ -159,7 +159,7 @@
         <div class="col mb-4">
             <div class="card border-info">
                 <div class="card-header text-center text-white font-weight-bold bg-info mb-3">
-                    Casos Nuevos vs Recuperados Nuevos - 1299 Recuperados Nuevos
+                    Casos Nuevos vs Recuperados Nuevos - 3517 Recuperados Nuevos
                 </div>
                 <div id="chart5" class="card-body" style="width:100%; height:400px;"></div>
             </div>
@@ -167,7 +167,7 @@
         <div class="col mb-4">
             <div class="card border-info">
                 <div class="card-header text-center text-white font-weight-bold bg-info mb-3">
-                    Total de Pruebas y Nuevas Pruebas Realizadas - 1076659 Total de Pruebas Realizadas
+                    Total de Pruebas y Nuevas Pruebas Realizadas - 1173003 Total de Pruebas Realizadas
                 </div>
                 <div id="chartTest" class="card-body" style="width:100%; height:400px;"></div>
             </div>
