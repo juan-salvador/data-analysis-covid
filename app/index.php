@@ -6,6 +6,11 @@
   $all_week = json_encode($chart_init['fecha']);
   $all_cases = json_encode($chart_init['total_casos']);
 
+  $chart_first = $class->get_activecases_vs_recovery();
+  $active_recovery_dates = json_encode($chart_first['fecha']);
+  $active_recovery_cases = json_encode($chart_first['casos_activos']);
+  $all_recovery = json_encode($chart_first['recuperados']);
+
   $chart_one = $class->get_newcases_to_date();
   $date = json_encode($chart_one['fecha']);
   $new_cases = json_encode($chart_one['casos_nuevos']);
@@ -126,6 +131,14 @@
         </div>
         <div class="col mb-4">
             <div class="card border-info">
+            <div class="card-header text-center text-white font-weight-bold bg-info mb-3">
+                Casos Activos vs Total de Recuperados
+            </div>
+            <div id="chart1" class="card-body" style="width:100%; height:400px;"></div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card border-info">
                 <div class="card-header text-center text-white font-weight-bold bg-info mb-3">
                     Promedio de Nuevos Casos por Semana
                 </div>
@@ -242,6 +255,29 @@
             },{
                 name: 'Diferencial día anterior',
                 data: <?php echo $diferencial_new_cases; ?>
+            }],
+            tooltip: {
+              shared: true
+            },
+        });
+
+        var myChart1 = Highcharts.chart('chart1', {
+            chart: {
+                type: 'line',
+                zoomType: 'x'
+            },
+            title: {
+                text: ''
+            },
+            xAxis: {
+                categories: <?php echo $active_recovery_dates; ?>
+            },
+            series: [{
+                name: 'Casos Activos',
+                data: <?php echo $active_recovery_cases; ?>
+            },{
+                name: 'Total de Recuperados',
+                data: <?php echo $all_recovery; ?>
             }],
             tooltip: {
               shared: true

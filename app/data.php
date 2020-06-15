@@ -3,7 +3,7 @@ require_once('csv.php');
 class Data{
 
     private $data = [];
-    private $date_start = '2020-05-11';
+    private $date_start = '2020-05-18';
 
     function __construct(){
         $class = new CSV();
@@ -54,6 +54,19 @@ class Data{
             array_push($new_cases['recuperados_nuevos'], (int)$this->data[$i][9]);
         }
         return $new_cases;
+    }
+
+    public function get_activecases_vs_recovery(){
+        $active_cases = ['fecha'=>[], 'casos_activos'=>[], 'recuperados'=>[]];
+        $count = count($this->data);
+
+        for($i=0; $i<$count; $i++){
+            if($i==0 || $this->data[$i][3]<$this->date_start){ continue;}
+            array_push($active_cases['fecha'], $this->data[$i][3]);
+            array_push($active_cases['casos_activos'], (int)$this->data[$i][4]);
+            array_push($active_cases['recuperados'], (int)$this->data[$i][11]);
+        }
+        return $active_cases;
     }
 
     public function get_activecases_to_date(){
