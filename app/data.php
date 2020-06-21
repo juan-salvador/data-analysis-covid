@@ -3,7 +3,7 @@ require_once('csv.php');
 class Data{
 
     private $data = [];
-    private $date_start = '2020-05-18';
+    private $date_start = '2020-06-01';
 
     function __construct(){
         $class = new CSV();
