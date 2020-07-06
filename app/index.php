@@ -110,7 +110,7 @@
             (*)Gráficos comparativos no incluyen días Lunes por ser días que menos pruebas se realizan
         </div>
         <div class="alert alert-danger" role="alert">
-            Fuente: Minsa / Fechas: Junio 2020
+            Fuente: Minsa / Fechas: Junio-Julio 2020
         </div>
     <div class="row row-cols-1 row-cols-md-1">
         <div class="col mb-4">
@@ -127,6 +127,22 @@
                 Nuevos Casos vs Diferencial con día anterior(*)
             </div>
             <div id="container" class="card-body" style="width:100%; height:400px;"></div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card border-info">
+            <div class="card-header text-center text-white font-weight-bold bg-info mb-3">
+                Casos Activos
+            </div>
+            <div id="chartActive" class="card-body" style="width:100%; height:400px;"></div>
+            </div>
+        </div>
+        <div class="col mb-4">
+            <div class="card border-info">
+            <div class="card-header text-center text-white font-weight-bold bg-info mb-3">
+                Total de Recuperados
+            </div>
+            <div id="chartRecovery" class="card-body" style="width:100%; height:400px;"></div>
             </div>
         </div>
         <div class="col mb-4">
@@ -255,6 +271,46 @@
             },{
                 name: 'Diferencial día anterior',
                 data: <?php echo $diferencial_new_cases; ?>
+            }],
+            tooltip: {
+              shared: true
+            },
+        });
+
+        var chartActive = Highcharts.chart('chartActive', {
+            chart: {
+                type: 'line',
+                zoomType: 'x'
+            },
+            title: {
+                text: ''
+            },
+            xAxis: {
+                categories: <?php echo $active_recovery_dates; ?>
+            },
+            series: [{
+                name: 'Casos Activos',
+                data: <?php echo $active_recovery_cases; ?>
+            }],
+            tooltip: {
+              shared: true
+            },
+        });
+
+        var chartRecovery = Highcharts.chart('chartRecovery', {
+            chart: {
+                type: 'line',
+                zoomType: 'x'
+            },
+            title: {
+                text: ''
+            },
+            xAxis: {
+                categories: <?php echo $active_recovery_dates; ?>
+            },
+            series: [{
+                name: 'Total de Recuperados',
+                data: <?php echo $all_recovery; ?>
             }],
             tooltip: {
               shared: true
