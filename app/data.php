@@ -1,9 +1,10 @@
 <?php
 require_once('csv.php');
+date_default_timezone_set('America/Lima');
 class Data{
 
     private $data = [];
-    private $date_start = '2020-06-01';
+    private $date_start = '2020-07-01';
 
     function __construct(){
         $class = new CSV();
@@ -205,5 +206,4 @@ class Data{
 /*
 $a = new Data();
 $b = $a->get_activecases_to_date();
-
 echo json_encode($b);*/
