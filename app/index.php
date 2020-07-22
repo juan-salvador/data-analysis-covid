@@ -110,7 +110,7 @@
             (*)Gráficos comparativos no incluyen días Lunes por ser días que menos pruebas se realizan
         </div>
         <div class="alert alert-danger" role="alert">
-            Fuente: Minsa / Fechas: Junio-Julio 2020
+            Fuente: Minsa / Fechas: Julio 2020
         </div>
     <div class="row row-cols-1 row-cols-md-1">
         <div class="col mb-4">
@@ -124,7 +124,7 @@
         <div class="col mb-4">
             <div class="card border-info">
             <div class="card-header text-center text-white font-weight-bold bg-info mb-3">
-                Nuevos Casos vs Diferencial con día anterior(*)
+                Nuevos Casos(*)
             </div>
             <div id="container" class="card-body" style="width:100%; height:400px;"></div>
             </div>
@@ -268,9 +268,6 @@
             series: [{
                 name: 'Nuevos Casos',
                 data: <?php echo $new_cases; ?>
-            },{
-                name: 'Diferencial día anterior',
-                data: <?php echo $diferencial_new_cases; ?>
             }],
             tooltip: {
               shared: true
